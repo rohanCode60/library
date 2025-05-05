@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Library</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <h1>📚 My Book Library</h1>
+
+  <!-- Add Book Button -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <a href="/books/new" class="add-book-btn">➕ Add New Book</a>
+  </div>
+
+  <!-- Book List -->
+  <ul>
+    <% books.forEach(book => { %>
+      <li>
+        <div class="book-card">
+          <img src="<%= book.img %>" alt="Book Cover" />
+          
+          <div class="book-details">
+            <p><strong>Book Name:</strong> <%= book.title %></p>
+            <p><strong>Author:</strong> <%= book.author %></p>
+            <p><strong>Year:</strong> <%= book.year %></p>
+
+            <div class="book-actions">
+              <a href="/books/<%= book._id %>/edit" class="edit-btn">✏️ Edit</a>
+              <form method="POST" action="/books/<%= book._id %>?_method=DELETE" style="display:inline;">
+                <button class="delete-btn" type="submit">🗑️ Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+
+</body>
+</html>

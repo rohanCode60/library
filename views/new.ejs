@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Book</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>➕ Add New Book</h2>
+
+    <form action="/books" method="POST">
+      <input type="text" name="title" placeholder="Book Title" required>
+      <input type="text" name="author" placeholder="Author Name" required>
+      <input type="number" name="year" placeholder="Published Year" required>
+      <input type="text" name="img" placeholder="Image URL" required>
+      <button type="submit">Add Book</button>
+    </form>
+  </div>
+
+</body>
+</html>
